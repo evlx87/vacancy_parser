@@ -40,8 +40,11 @@ class JSONSaver(FileSaver):
         Добавление вакансии в файл
         Args: item (list[dict]): Список словарей с информацией о вакансиях
         """
-        with open('data/vacancy.json', 'w', encoding='utf-8') as f:
-            json.dump(self.list_vacancy, f, indent=4, ensure_ascii=False)
+        for i in item:
+            if i not in self.list_vacancy:
+                self.list_vacancy.append(i)
+                with open('data/vacancy.json', 'w', encoding='utf-8') as f:
+                    json.dump(self.list_vacancy, f, indent=4, ensure_ascii=False)
 
     def get(self, parameter: str) -> [dict]:
         """Получение информации о вакансии по критериям"""
