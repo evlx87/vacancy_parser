@@ -104,3 +104,6 @@ class Vacancy:
         """
         if isinstance(value, str):
             self.__requirements = value
+
+    def to_dict(self):
+        return vars(self)
