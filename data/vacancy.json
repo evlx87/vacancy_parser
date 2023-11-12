@@ -48,16 +48,16 @@
         "requirements": "Уверенное знание языка программирования <highlighttext>Python</highlighttext>."
     },
     {
-        "title": "Программист Python",
-        "link": "https://hh.ru/vacancy/89297080",
-        "salary": null,
-        "requirements": "Высшее техническое образование (математики, физики, энергетики - плюс). Хорошее знание <highlighttext>Python</highlighttext> и/или Wolfram Mathematica или желание и возможность их выучить. "
-    },
-    {
         "title": "Backend разработчик",
         "link": "https://hh.ru/vacancy/89183961",
         "salary": "0",
         "requirements": "Обучение и передача знаний другим сотрудникам. Умением читать чужой код и разрабатывать его в дальнейшем. База данных: MySQL,PostgreSQL,SQL."
+    },
+    {
+        "title": "Программист Python",
+        "link": "https://hh.ru/vacancy/89297080",
+        "salary": null,
+        "requirements": "Высшее техническое образование (математики, физики, энергетики - плюс). Хорошее знание <highlighttext>Python</highlighttext> и/или Wolfram Mathematica или желание и возможность их выучить. "
     },
     {
         "title": "Помощник программиста (удаленно)",
@@ -78,16 +78,16 @@
         "requirements": "Знание, опыт практической работы с Node.js, TypeScript, NestJS, PostgreSQL, базовый фронтэнд. Знание <highlighttext>Python</highlighttext> и PHP приветсвуется. Владение английским на уровне..."
     },
     {
-        "title": "Стажер в Команду машинного обучения",
-        "link": "https://hh.ru/vacancy/89316896",
-        "salary": "0",
-        "requirements": "Знание и опыт работы с <highlighttext>Python</highlighttext>, а также с библиотеками для машинного обучения, такими как PyTorch, scikit-learn, huggingface, TensorFlow. "
-    },
-    {
         "title": "Python Developer",
         "link": "https://hh.ru/vacancy/89009244",
         "salary": null,
         "requirements": "<highlighttext>Python</highlighttext> language, MongoDB, tcp/ip, jwt, http/https requests, json api. Самостоятельность, Ответственность. Можно без опыта."
+    },
+    {
+        "title": "Стажер в Команду машинного обучения",
+        "link": "https://hh.ru/vacancy/89316896",
+        "salary": "0",
+        "requirements": "Знание и опыт работы с <highlighttext>Python</highlighttext>, а также с библиотеками для машинного обучения, такими как PyTorch, scikit-learn, huggingface, TensorFlow. "
     },
     {
         "title": "Младший аналитик данных",
