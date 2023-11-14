@@ -49,9 +49,10 @@ def vacancy_output(res: list[Vacancy]) -> None:
     """Вывод вакансий в удобном для пользователя виде"""
     for i, v in enumerate(res):
         print(f"{i + 1}. "
-              f"Название: {v.title}\n"
-              f"Зарплата от {v.salary}\n"
-              f"Ссылка: {v.link}\n"
+              f"\t{v.title}\n"
+              f"\tЗарплата от {v.salary}\n"
+              f"\tТребования: {v.requirements}\n"
+              f"\tСсылка: {v.link}\n"
               f"+++++++++++")
 
 
@@ -63,5 +64,6 @@ def output_by_quantity(vacancy: list[Vacancy], quantity: int) -> list[Vacancy]:
 def get_vacancies_from_json(vacancies):
     quantity = int(input("Введите нужное количество вакансий для вывода: "))
     test = output_by_quantity(vacancies, quantity)
+    sorted_by_salary(test)
     return vacancy_output(test)
 
