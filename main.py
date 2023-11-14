@@ -1,4 +1,7 @@
-from src.utils import parser_run
+import json
+
+from src.classes.class_vacancy import Vacancy
+from src.utils import parser_run, get_vacancies_from_json
 
 print("Программа поиска вакансий запущена.")
 
@@ -15,7 +18,18 @@ def main():
         parser_run()
         main()
     elif user_choice == "2":
-        print("Мы работаем над этим")
+        with open('data/vacancy.json', 'r', encoding='utf-8') as f:
+            list_vacancy = json.load(f)
+
+        vacancies = [Vacancy(
+            title=v['title'],
+            link=v['link'],
+            salary=v['salary'] if v.get('salary') else 0,
+            requirements=v['requirements'])
+            for v in list_vacancy]
+
+        get_vacancies_from_json(vacancies)
+
     elif user_choice == "3":
         print("До свидания.")
     else:

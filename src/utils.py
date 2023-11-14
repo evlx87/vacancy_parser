@@ -1,6 +1,8 @@
+import json
 import uuid
 
 from src.classes.class_api import HeadHunterAPI
+from src.classes.class_vacancy import Vacancy
 from src.file_saver import JSONSaver
 
 
@@ -36,3 +38,30 @@ def parser_run():
 
     print(f"Поиск вакансий по запросу '{keyword}' завершен.\n"
           f"Добавлено {len(uvc)} вакансий в файл vacancy.json")
+
+
+def sorted_by_salary(vacancy: list[Vacancy]) -> list[Vacancy]:
+    """Сортировка по зарплате"""
+    return sorted(vacancy, reverse=True)
+
+
+def vacancy_output(res: list[Vacancy]) -> None:
+    """Вывод вакансий в удобном для пользователя виде"""
+    for i, v in enumerate(res):
+        print(f"{i + 1}. "
+              f"Название: {v.title}\n"
+              f"Зарплата от {v.salary}\n"
+              f"Ссылка: {v.link}\n"
+              f"+++++++++++")
+
+
+def output_by_quantity(vacancy: list[Vacancy], quantity: int) -> list[Vacancy]:
+    """Вывод вакансий по заданному количеству"""
+    return vacancy[:quantity]
+
+
+def get_vacancies_from_json(vacancies):
+    quantity = int(input("Введите нужное количество вакансий для вывода: "))
+    test = output_by_quantity(vacancies, quantity)
+    return vacancy_output(test)
+
