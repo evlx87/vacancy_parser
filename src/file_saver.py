@@ -63,6 +63,7 @@ class JSONSaver(FileSaver):
 
     def delete(self, vacancy: Vacancy) -> None:
         """Удаление вакансии"""
+        # TODO
         pass
 
     def clear(self):

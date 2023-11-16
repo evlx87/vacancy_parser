@@ -1,7 +1,7 @@
 import json
 import uuid
 
-from src.classes.class_api import HeadHunterAPI
+from src.classes.class_api import HeadHunterAPI, SuperJobAPI
 from src.classes.class_vacancy import Vacancy
 from src.file_saver import JSONSaver
 
@@ -18,6 +18,17 @@ def get_hh_vacancies(vacancy: list[dict]) -> list[dict]:
     return vacancy_object
 
 
+def get_sj_vacancies(vacancy: list[dict]) -> list[dict]:
+    """Форматирование объектов SuperJob"""
+    vacancy_object = [{
+        'title': item['profession'],
+        'link': item['link'],
+        'salary': item['payment_from'],
+        'requirements': item['candidat']
+    } for item in vacancy]
+    return vacancy_object
+
+
 def unique_value_counter(data):
     unique_ids = set()
     for d in data:
@@ -28,16 +39,19 @@ def unique_value_counter(data):
 def parser_run():
     keyword = input('Введите поисковой запрос: ')
     hh_api = HeadHunterAPI()
+    sj_api = SuperJobAPI()
 
     vacancies_hh = get_hh_vacancies(hh_api.get_vacancies(keyword))
+    vacancies_sj = get_sj_vacancies(sj_api.get_vacancies(keyword))
 
-    uvc = unique_value_counter(vacancies_hh)
+    # uvc = unique_value_counter(vacancies_hh)
 
     json_saver = JSONSaver()
     json_saver.add(vacancies_hh)
+    json_saver.add(vacancies_sj)
 
-    print(f"Поиск вакансий по запросу '{keyword}' завершен.\n"
-          f"Добавлено {len(uvc)} вакансий в файл vacancy.json")
+    #print(f"Поиск вакансий по запросу '{keyword}' завершен.\n"
+    #      f"Добавлено {len(uvc)} вакансий в файл vacancy.json")
 
 
 def sorted_by_salary(vacancy: list[Vacancy]) -> list[Vacancy]:
