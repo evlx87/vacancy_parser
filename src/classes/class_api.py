@@ -73,6 +73,6 @@ class SuperJobAPI(VacancyAPI):
                                 headers=self.headers)
 
         if not response.status_code == HTTPStatus.OK:
-            return f'Ошибка! Статус-код: {response.status_code}'
+            return f'Ошибка при выполнении запроса: {response.status_code}'
 
         return response.json()['objects']
