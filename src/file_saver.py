@@ -19,11 +19,6 @@ class FileSaver(ABC):
         pass
 
     @abstractmethod
-    def delete(self, vacancy: Vacancy) -> None:
-        """Удаление вакансии"""
-        pass
-
-    @abstractmethod
     def clear(self):
         """Очистка файла"""
         pass
@@ -60,11 +55,6 @@ class JSONSaver(FileSaver):
         if not result:
             raise GetError('Вакансий с таким ключевым параметром нет в файле')
         return result
-
-    def delete(self, vacancy: Vacancy) -> None:
-        """Удаление вакансии"""
-        # TODO
-        pass
 
     def clear(self):
         """Очистка файла"""

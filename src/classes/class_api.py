@@ -1,11 +1,9 @@
-import os
 from abc import ABC, abstractmethod
 from http import HTTPStatus
 from typing import Any
 
 import requests
 
-from src.classes.class_vacancy import Vacancy
 from src.config import SJ_API_KEY
 
 
